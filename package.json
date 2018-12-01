@@ -1,0 +1,59 @@
+{
+  "name": "wasm-playground",
+  "version": "0.1.0",
+  "description": "A playground for compiling and running WebAssembly applications",
+  "main": "server/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:dev": "webpack --mode development --config webpack.server.js && webpack --config webpack.dev.js",
+    "build:client:dev": "webpack --mode development --config webpack.dev.js",
+    "build:server:dev": "webpack --mode development --config webpack.server.js",
+    "start:worker": "nodemon server/worker.js --exec babel-node server/worker.js",
+    "start": "npm run build:dev && node dist/server.js"
+  },
+  "keywords": [
+    "webassembly",
+    "wasm",
+    "emscripten",
+    "javascript",
+    "nodejs",
+    "code-playground"
+  ],
+  "devDependencies": {
+    "@babel/cli": "^7.1.5",
+    "@babel/core": "^7.1.6",
+    "@babel/node": "^7.0.0",
+    "@babel/preset-env": "^7.1.6",
+    "babel-loader": "^8.0.4",
+    "nodemon": "^1.18.7",
+    "vue-loader": "^15.4.2",
+    "vue-template-compiler": "^2.5.17",
+    "webpack": "^4.26.0",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-middleware": "^3.4.0",
+    "webpack-dev-server": "^3.1.10",
+    "webpack-hot-middleware": "^2.24.3",
+    "webpack-merge": "^4.1.4",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "bull": "^3.5.2",
+    "clean-webpack-plugin": "^1.0.0",
+    "cors": "^2.8.5",
+    "css-loader": "^1.0.1",
+    "dotenv": "^6.1.0",
+    "express": "^4.16.4",
+    "express-zip": "^2.0.1",
+    "file-loader": "^2.0.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "multer": "^1.4.1",
+    "sass-loader": "^7.1.0",
+    "socket.io": "^2.2.0",
+    "socket.io-client": "^2.2.0",
+    "style-loader": "^0.23.1",
+    "vue": "^2.5.17"
+  }
+}
