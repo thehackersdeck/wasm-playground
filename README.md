@@ -1,2 +1,2 @@
 # wasm-playground
-A playground for compiling and running WebAssembly applicati
+A playground for compiling and running WebAssembly application
