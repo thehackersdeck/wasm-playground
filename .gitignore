@@ -77,3 +77,9 @@ typings/
 
 #DynamoDB Local files 
 .dynamodb/ 
+
+#dist folder
+dist/
+
+#upload folder for server
+server/upload/
