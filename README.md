@@ -7,3 +7,4 @@ A playground for compiling and running WebAssembly applications.
 * build:client:dev - Builds the client project on webpack.dev.js config
 * build:server:dev - Builds the client project on webpack.server.js config
 * start:worker - Transpiles and runs the queue worker
+* test - Run the tests
