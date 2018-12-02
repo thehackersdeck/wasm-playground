@@ -20,7 +20,7 @@ class CompileController {
 
         let options = ` -o ${outputPath}${outputFileName}.js`;
 
-        let cmd = os.homedir() + process.env.EMSCRIPTEN_BINARY + ` ${inputFile}` + options;
+        const cmd = `emcc ${inputFile} ${options}`;
 
         const child = exec(cmd, (error, stdout, stderr) => {
             if (error) {
