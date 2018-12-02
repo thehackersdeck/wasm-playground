@@ -13,10 +13,15 @@ class CompileController {
      * @return {json}
      */
     static compileFile(req, res) {
-        //Run job
+        // Run job
         let inputFile = path.join(__dirname, '../server/uploads/') + req.file.filename;
         let outputPath = path.join(__dirname, '../client/compiled/');
         let outputFileName = req.file.filename.split('.')[0];
+
+        // Create output directory if not exist
+        if (! fs.existsSync(outputPath)){
+            fs.mkdirSync(outputPath);
+        }
 
         let options = ` -o ${outputPath}${outputFileName}.js`;
 
