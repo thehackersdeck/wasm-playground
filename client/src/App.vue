@@ -53,12 +53,14 @@ export default {
                     }
                 }
             ).then((response) => {
+                this.compiled = true;
                 this.file = response.data.data.file;
-            }).catch((response) => {
-                console.log(response);
+            }).catch((error) => {
+                if (error.response.status === 500) {
+                    alert('A server error has occured and script could not be compiled, please make sure you have Emscripten installed.');
+                }
             }).then((response) => {
                 this.compiling = false;
-                this.compiled = true;
             });
         }
     },
